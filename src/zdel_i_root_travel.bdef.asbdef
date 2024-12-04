@@ -1,0 +1,46 @@
+managed implementation in class zbp_del_i_root_travel unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZDEL_I_ROOT_TRAVEL alias TravelEntity
+persistent table zdel_travel_1
+draft table zdel_draft_trv
+etag master LastChangedAt
+lock master total etag LocalLastChangedAt
+authorization master ( global )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+//  field ( readonly ) TravelId;
+  draft action Activate;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zdel_travel_1
+  {
+    AgencyId = agency_id;
+    Attachment = attachment;
+    BeginDate = begin_date;
+    BookingFee = booking_fee;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    CurrencyCode = currency_code;
+    CustomerId = customer_id;
+    Description = description;
+    EndDate = end_date;
+    FileName = file_name;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+    LocalLastChangedBy = local_last_changed_by;
+    MimeType = mime_type;
+    OverallStatus = overall_status;
+    TravelId = travel_id;
+    TotalPrice = total_price;
+
+  }
+
+}

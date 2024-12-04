@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def on Projection View'
+define service ZDEL_P_ROOT_TRAVEL {
+  expose ZDEL_P_ROOT_TRAVEL;
+}

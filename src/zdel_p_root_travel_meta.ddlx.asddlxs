@@ -1,0 +1,150 @@
+@Metadata.layer: #CORE
+
+@Search.searchable: true
+@UI.headerInfo : {
+typeName: 'Item',
+typeNamePlural: 'Items',
+description.targetElement: 'TravelId',
+description.value: 'TravelId'
+
+}
+annotate entity ZDEL_P_ROOT_TRAVEL with
+
+{
+
+  @UI.facet: [{
+      id: 'idIdentification',
+      label: 'Primary',
+      purpose: #STANDARD,
+      type : #IDENTIFICATION_REFERENCE
+   }
+  // ,
+  // {
+  //    id: 'idLineItem',
+  //    label: 'Details',
+  //    purpose: #STANDARD,
+  //    type : #LINEITEM_REFERENCE
+  // }
+   ]
+
+  @UI :
+  { selectionField: [{ position: 10 }],
+  lineItem: [{ label: 'Travel Id', position: 10 }],
+  identification: [{ position: 10, label: 'Travel Id' }] }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity : { name: '/DMO/R_Travel_D', element: 'TravelID' }, useForValidation: true } ]
+  TravelId;
+
+  @UI :
+  { selectionField: [{ position: 20 }],
+  lineItem: [{ label: 'Agency Id', position: 20 }],
+  identification: [{ position: 20, label: 'Agency Id' }] }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity : { name: '/DMO/I_Agency_StdVH', element: 'AgencyID' }, useForValidation: true } ]
+  AgencyId;
+
+  @UI :
+  { selectionField: [{ position: 30 }],
+  lineItem: [{ label: 'Customer ID', position: 30 }],
+  identification: [{ position: 30, label: 'Customer ID' }] }
+  @Search.defaultSearchElement: true
+  CustomerId;
+
+  @UI :
+  { selectionField: [{ position: 40 }],
+  lineItem: [{ label: 'Begin Date', position: 40 }],
+  identification: [{ position: 40, label: 'Begin Date' }] }
+  @Search.defaultSearchElement: true
+  BeginDate;
+
+  @UI :
+  { selectionField: [{ position: 50 }],
+  lineItem: [{ label: 'End Date', position: 50 }],
+  identification: [{ position: 50, label: 'End Date' }] }
+  @Search.defaultSearchElement: true
+  EndDate;
+
+  @UI :
+  {
+  lineItem: [{ label: 'Booking Fee', position: 60 }],
+  identification: [{ position: 60, label: 'Booking Fee' }] }
+  @Search.defaultSearchElement: true
+  BookingFee;
+
+  @UI :
+  {
+  lineItem: [{ label: 'Total Price', position: 70 }],
+  identification: [{ position: 70, label: 'Total Price' }] }
+  @Search.defaultSearchElement: true
+  TotalPrice;
+
+  @UI :
+  {
+  lineItem: [{ label: 'CurrencyCode', position: 80 }],
+  identification: [{ position: 80, label: 'CurrencyCode' }] }
+  @Search.defaultSearchElement: true
+  CurrencyCode;
+
+  @UI :
+  {
+  lineItem: [{ label: 'Description', position: 90 }],
+  identification: [{ position: 90, label: 'Description' }] }
+  @Search.defaultSearchElement: true
+  Description;
+
+  @UI :
+  {
+  lineItem: [{ label: 'Status', position: 100 }],
+  identification: [{ position: 100, label: 'Status' }] }
+  @Search.defaultSearchElement: true
+  OverallStatus;
+
+  @UI :
+  {
+  lineItem: [{ position: 110 }],
+  identification: [{ position: 110}] }
+  Attachment;
+
+  @UI :
+  {
+  lineItem: [{ position: 120 }],
+  identification: [{ position: 120}] }
+  MimeType;
+
+  @UI :
+  {
+  lineItem: [{ position: 130 }],
+  identification: [{ position: 130}] }
+  FileName;
+
+  @UI :
+  {
+  lineItem: [{ position: 140 }],
+  identification: [{ position: 140}] }
+  CreatedBy;
+
+  @UI :
+  {
+  lineItem: [{ position: 150 }],
+  identification: [{ position: 150}] }
+  CreatedAt;
+
+  @UI :
+  {
+  lineItem: [{ position: 160 }],
+  identification: [{ position: 160}] }
+  LocalLastChangedBy;
+
+  @UI :
+  {
+  lineItem: [{ position: 170 }],
+  identification: [{ position: 170}] }
+  LocalLastChangedAt;
+
+  @UI :
+  {
+  lineItem: [{ position: 180 }],
+  identification: [{ position: 180}] }
+  LastChangedAt;
+
+}
